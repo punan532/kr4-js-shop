@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <script defer src="js/main.js"></script>
+    <script defer src="js/data.js"></script>
+    <script defer src="js/cart.js"></script>
+    <script defer src="js/validation.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">К содержимому</a>
@@ -21,13 +24,15 @@
             <li><a href="catalog.html">Каталог</a></li>
             <li><a href="order.html" aria-current="page">Заявка</a></li>
             <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="cart.html">Корзина <span data-cart-count>0</span></a></li>
           </ul>
         </nav>
       </div>
     </header>
     <main id="main" tabindex="-1">
       <nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="index.html">Главная</a> / Оформление заявки</nav>
-      <h1>Оформление заявки</h1><p>Укажите товар и контакты для связи. Заявка учебная.</p>
+      <h1>Оформление заявки</h1><p>Выберите товар или корзину и укажите контакты для связи.</p>
+      <p id="order-summary"></p>
       <form class="order-form" data-demo-form>
         <div class="form-field"><label for="item">Товар</label>
         <select name="item" id="item"><option value="1">Бутерброд</option><option value="2">Бычок-осеменитель</option><option value="3">Водка «Пять озёр»</option></select></div>

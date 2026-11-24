@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <script defer src="js/main.js"></script>
+    <script defer src="js/data.js"></script>
+    <script defer src="js/cart.js"></script>
+    <script defer src="js/catalog.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">К содержимому</a>
@@ -21,6 +24,7 @@
             <li><a href="catalog.html" aria-current="page">Каталог</a></li>
             <li><a href="order.html">Заявка</a></li>
             <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="cart.html">Корзина <span data-cart-count>0</span></a></li>
           </ul>
         </nav>
       </div>
@@ -29,47 +33,22 @@
       <nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="index.html">Главная</a> / Каталог</nav>
       <h1>Каталог товаров</h1>
       <div class="catalog-layout">
-        <aside class="catalog-filters"><fieldset><legend>Категория</legend>
-          <label><input type="radio" name="category" value="Все" checked> Все</label>
-          <label><input type="radio" name="category" value="Еда"> Еда</label>
-          <label><input type="radio" name="category" value="Хозяйство"> Хозяйство</label>
-          <label><input type="radio" name="category" value="Напитки"> Напитки</label>
-        </fieldset></aside>
-        <section class="catalog-products"><h2>Товары</h2><div class="products-grid">
-          <article class="product-card" data-category="Еда">
-            <div class="product-card__image-container"><picture>
-            <source type="image/webp" srcset="images/product1-320.webp 320w, images/product1-600.webp 600w" sizes="(min-width: 64rem) 340px, (min-width: 40rem) 45vw, 90vw">
-            <img class="product-card__image" src="images/product1.png" alt="Треугольный бутерброд с ветчиной и сыром" loading="lazy">
-          </picture></div>
-            <span class="category">Еда</span>
-            <h3><a href="product.html#item-1">Бутерброд</a></h3>
-            <p>Сэндвич с ветчиной и сыром на мягком белом хлебе.</p>
-            <strong class="price">121 ₽</strong>
-            <a class="button secondary" href="order.html?item=1">Заказать</a>
-          </article>
-          <article class="product-card" data-category="Хозяйство">
-            <div class="product-card__image-container"><picture>
-            <source type="image/webp" srcset="images/product2-320.webp 320w, images/product2-600.webp 600w" sizes="(min-width: 64rem) 340px, (min-width: 40rem) 45vw, 90vw">
-            <img class="product-card__image" src="images/product2.png" alt="Чёрный племенной бык" loading="lazy">
-          </picture></div>
-            <span class="category">Хозяйство</span>
-            <h3><a href="product.html#item-2">Бычок-осеменитель</a></h3>
-            <p>Племенной чёрный бык крепкого телосложения для фермерского хозяйства.</p>
-            <strong class="price">150 000 ₽</strong>
-            <a class="button secondary" href="order.html?item=2">Заказать</a>
-          </article>
-          <article class="product-card" data-category="Напитки">
-            <div class="product-card__image-container"><picture>
-            <source type="image/webp" srcset="images/product3-320.webp 320w, images/product3-600.webp 600w" sizes="(min-width: 64rem) 340px, (min-width: 40rem) 45vw, 90vw">
-            <img class="product-card__image" src="images/product3.png" alt="Бутылка водки «Пять озёр»" loading="lazy">
-          </picture></div>
-            <span class="category">Напитки</span>
-            <h3><a href="product.html#item-3">Водка «Пять озёр»</a></h3>
-            <p>Водка «Пять озёр» в классической стеклянной бутылке.</p>
-            <strong class="price">548 ₽</strong>
-            <a class="button secondary" href="order.html?item=3">Заказать</a>
-          </article>
-        </div></section>
+        <aside class="catalog-filters"><form id="filters" class="filters-form">
+          <div class="form-field"><label for="search">Название товара</label><input id="search" type="search" placeholder="Найти товар"></div>
+          <div class="form-field"><label for="category">Категория</label><select id="category"><option value="">Все категории</option></select></div>
+          <div class="form-field"><label for="sort">Сортировка</label><select id="sort">
+            <option value="">Исходный порядок</option><option value="asc">Сначала дешевле</option>
+            <option value="desc">Сначала дороже</option><option value="title">По названию</option>
+          </select></div>
+          <button type="reset" class="secondary">Сбросить фильтры</button>
+        </form></aside>
+        <section class="catalog-products" aria-labelledby="results-title"><h2 id="results-title">Товары</h2>
+          <p id="found" role="status"></p>
+          <div class="products-grid" id="results"></div>
+          <div id="empty-results" hidden><h3>Товары не найдены</h3><p>Попробуйте другую категорию или более короткое название.</p>
+            <button class="secondary" type="button" id="show-all">Показать все товары</button></div>
+          <p id="cart-notice" role="status"></p>
+        </section>
       </div>
     </main>
     <footer><div>© 2026 PunanovStore · Учебный магазин</div></footer>

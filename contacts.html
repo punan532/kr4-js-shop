@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <script defer src="js/main.js"></script>
+    <script defer src="js/data.js"></script>
+    <script defer src="js/cart.js"></script>
+    <script defer src="js/validation.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">К содержимому</a>
@@ -21,6 +24,7 @@
             <li><a href="catalog.html">Каталог</a></li>
             <li><a href="order.html">Заявка</a></li>
             <li><a href="contacts.html" aria-current="page">Контакты</a></li>
+            <li><a href="cart.html">Корзина <span data-cart-count>0</span></a></li>
           </ul>
         </nav>
       </div>
@@ -28,14 +32,14 @@
     <main id="main" tabindex="-1">
       <nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="index.html">Главная</a> / Контакты</nav>
       <h1>Контакты</h1>
-      <div class="contact-layout">
-        <section><h2>Учебный магазин</h2><address>г. Москва<br><a href="tel:+79000000000">+7 (900) 000-00-00</a><br><a href="mailto:info@example.com">info@example.com</a></address></section>
-        <section id="feedback"><h2>Обратная связь</h2><form class="order-form" data-demo-form>
-          <div class="form-field"><label for="email">Электронная почта</label><input type="email" autocomplete="email" id="email" name="email" required></div>
-          <div class="form-field"><label for="message">Сообщение</label><textarea id="message" name="message" rows="4" required></textarea></div>
-          <button class="button" type="submit">Подготовить сообщение</button>
-        </form><p role="status" data-form-status></p></section>
-      </div>
+            <div class="contact-layout">
+              <section><h2>Учебный магазин</h2><address>г. Москва<br><a href="tel:+79000000000">+7 (900) 000-00-00</a><br><a href="mailto:info@example.com">info@example.com</a></address></section>
+              <section id="feedback"><h2>Обратная связь</h2><form class="order-form" data-demo-form>
+                <div class="form-field"><label for="email">Электронная почта</label><input type="email" autocomplete="email" id="email" name="email" required></div>
+                <div class="form-field"><label for="message">Сообщение</label><textarea id="message" name="message" rows="4" required></textarea></div>
+                <button class="button" type="submit">Подготовить сообщение</button>
+              </form><p role="status" data-form-status></p></section>
+            </div>
     </main>
     <footer><div>© 2026 PunanovStore · Учебный магазин</div></footer>
 

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина · PunanovStore</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script defer src="js/main.js"></script>
+    <script defer src="js/data.js"></script>
+    <script defer src="js/cart.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">К содержимому</a>
+    <header>
+      <div class="site-header">
+        <a href="index.html" aria-label="PunanovStore — главная"><img class="site-logo" src="images/logo.png" alt="PunanovStore" width="1310" height="224"></a>
+        <button class="menu-toggle secondary" type="button" aria-controls="navigation" aria-expanded="false" hidden>Меню</button>
+        <nav id="navigation" class="site-nav" aria-label="Основная навигация">
+          <ul class="site-nav__list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="catalog.html">Каталог</a></li>
+            <li><a href="order.html">Заявка</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="cart.html" aria-current="page">Корзина <span data-cart-count>0</span></a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="index.html">Главная</a> / Корзина</nav>
+      <h1>Корзина</h1>
+      <p id="cart-empty" hidden>Корзина пока пуста. <a href="catalog.html">Выбрать товары</a></p>
+      <div id="cart-content" hidden>
+        <ul id="cart-lines" aria-label="Товары в корзине"></ul>
+        <p id="subtotal"></p><p id="discount"></p><p class="total" id="total"></p>
+        <a class="button" href="order.html?from=cart">Оформить заявку</a>
+      </div>
+      <p id="cart-notice" role="status"></p>
+    </main>
+    <footer><div>© 2026 PunanovStore · Учебный магазин</div></footer>
+
+  </body>
+</html>
