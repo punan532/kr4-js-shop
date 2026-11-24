@@ -6,7 +6,7 @@ document.querySelectorAll("[data-product]").forEach((button) => {
     const form = dialog.querySelector("form");
     form.reset();
     clearErrors(form);
-    form.elements.item.value = String(product.id);
+    form.elements.namedItem("item").value = String(product.id);
     document.querySelector("#quick-status").textContent = "";
     dialog.showModal();
   });

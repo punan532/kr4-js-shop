@@ -84,8 +84,8 @@ for (const form of document.querySelectorAll("[data-demo-form]")) {
       firstInvalid.focus();
       return;
     }
-    const name = form.elements.name?.value.trim();
-    const item = form.elements.item;
+    const name = form.elements.namedItem("name")?.value.trim();
+    const item = form.elements.namedItem("item");
     const selection = item?.selectedOptions[0]?.textContent;
     const amount = item?.value === "cart" ? totals().total : products.find((p) => String(p.id) === item?.value)?.price;
     form.reset();
