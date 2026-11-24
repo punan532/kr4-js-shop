@@ -1,8 +1,10 @@
 # PunanovStore · КР №4
 
-Интерактивный интернет-магазин на чистом JavaScript. Основа — адаптивная версия PunanovStore из КР №3, продолжение [исходного магазина КР №1](https://github.com/punan532/kr1-html-css-shop). Тема работы — DOM, события, формы и валидация.
+Интерактивный интернет-магазин на чистом JavaScript. Основа — [адаптивная версия PunanovStore из КР №3](https://github.com/punan532/kr3-responsive-shop), продолжение [исходного магазина КР №1](https://github.com/punan532/kr1-html-css-shop). Тема работы — DOM, события, формы и валидация.
 
 Пунанов Егор Андреевич, ЭФБО-06-25.
+
+[Открыть магазин на GitHub Pages](https://punan532.github.io/kr4-js-shop/)
 
 ## Запуск
 
